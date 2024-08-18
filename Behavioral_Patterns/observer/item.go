@@ -36,10 +36,10 @@ func (i *Item) notifyAll() {
 
 func removeFromSlice(observerList []Observer, observerToRemove Observer) []Observer {
 	observerListLength := len(observerList)
-	for i, observer := range observerList {
+	for idx, observer := range observerList {
 		if observerToRemove.getID() == observer.getID() {
-			observerList[observerListLength -1], observerList[i] =
-        observerList[i], observerList[observerListLength -1]
+			observerList[observerListLength -1], observerList[idx] =
+        observerList[idx], observerList[observerListLength -1]
       return observerList[:observerListLength -1]
 		}
 	}
